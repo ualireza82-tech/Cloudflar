@@ -1,0 +1,18 @@
+name = "ajsports-shield"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# KV Namespace — بعد از ساخت KV، ID را اینجا بذار
+[[kv_namespaces]]
+binding = "AJCACHE"
+id = "REPLACE_WITH_YOUR_KV_ID"
+preview_id = "REPLACE_WITH_YOUR_KV_PREVIEW_ID"
+
+# Cron: هر ۱ دقیقه (keep-alive + cache refresh)
+[triggers]
+crons = ["* * * * *"]
+
+# Secret: RENDER_URL را با wrangler secret set تنظیم کن
+# wrangler secret set RENDER_URL
+# مقدار: https://server.ajsports.ir
+
